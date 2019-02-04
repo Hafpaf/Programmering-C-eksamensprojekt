@@ -1,4 +1,5 @@
 import random
+import array
 #Prime one: 7213
 #Prime two 102337
 
@@ -7,5 +8,5 @@ import random
 prime_p = 7213
 prime_q = 102337
 
-primes = [prime_p,prime_q] #create array with primes
+class array.primes(I[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
 print(primes)
