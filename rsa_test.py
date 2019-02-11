@@ -1,5 +1,8 @@
 '''
 Generate rsa keypair
+
+TODO:
+catch if gcd is not equal 1
 '''
 import random
 from array import array #using array function
