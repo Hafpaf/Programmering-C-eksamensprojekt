@@ -1,0 +1,4 @@
+scipy
+pyscreenshot
+pyautogui
+opencv-python
