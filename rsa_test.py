@@ -15,15 +15,23 @@ from math import gcd
 prime_p = 7213
 prime_q = 102337
 
+#Test if prime is the same
+if prime_p == prime_q:
+    print("Primes are the same.")
+    print("exiting program")
+    exit(0)
+
 primes = array('I',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
 for primeslist in primes:
-    print(primeslist)
+    print("prime:",primeslist)
 
 n = prime_p * prime_q #calculate n
 phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n
 
+#self_choosen number below phi_n, must be a prime
 number_e = 352841
 
+#calculate greater common divisor
 gcd_calc = gcd(phi_n,number_e) #must return 1
 
 while True:
