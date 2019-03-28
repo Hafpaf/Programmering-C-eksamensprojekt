@@ -6,7 +6,7 @@ catch if gcd is not equal 1
 '''
 import random
 from array import array #using array function
-from math import gcd
+from numpy import mod, gcd
 #Prime one: 7213
 #Prime two 102337
 
@@ -18,7 +18,7 @@ prime_q = 102337
 #Test if prime is the same
 if prime_p == prime_q:
     print("Primes are the same.")
-    print("exiting program")
+    print("Exiting program...")
     exit(0)
 
 primes = array('I',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
@@ -41,3 +41,7 @@ while True:
     else:
         print("gcd_calc: False")
         break
+
+#number_d_calc = mod(number_d,) #take modulus of numbers
+number_d = mod((number_e**(-1)),phi_n) #invers nummer_e
+print("number_d:", number_d)
