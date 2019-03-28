@@ -17,7 +17,7 @@ prime_q = 102337
 
 #Test if prime is the same
 if prime_p == prime_q:
-    print("Primes are the same.")
+    print("Primes must not be equal")
     print("Exiting program...")
     exit(0)
 
@@ -40,7 +40,8 @@ while True:
         break
     else:
         print("gcd_calc: False")
-        break
+        print("gcd must parse")
+        exit(1)
 
 #number_d_calc = mod(number_d,) #take modulus of numbers
 number_d = mod((number_e**(-1)),phi_n) #invers nummer_e
