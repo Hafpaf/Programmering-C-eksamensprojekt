@@ -3,10 +3,13 @@ Generate rsa keypair
 
 TODO:
 catch if gcd is not equal 1
+Find solution to d
+Import Sieve of Erastothenes prime generator as library
 '''
 import random
 from array import array #using array function
 from numpy import mod, gcd
+
 #Prime one: 7213
 #Prime two 102337
 
@@ -26,10 +29,11 @@ for primeslist in primes:
     print("prime:",primeslist)
 
 n = prime_p * prime_q #calculate n
-phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n
+phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n, called eulers totient function
 
-#self_choosen number below phi_n, must be a prime
+#self_choosen number below within [1 < number_e < phi_n], must be a prime
 number_e = 352841
+#number_e = random.randint(1,phi_n) # [1 < number_e < phi_n]
 
 #calculate greater common divisor
 gcd_calc = gcd(phi_n,number_e) #must return 1
