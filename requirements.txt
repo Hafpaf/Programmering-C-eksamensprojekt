@@ -1,4 +1,3 @@
-scipy
-pyscreenshot
-pyautogui
-opencv-python
+numpy==1.16.2
+random
+array
