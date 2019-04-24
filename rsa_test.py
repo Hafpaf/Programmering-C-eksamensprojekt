@@ -9,6 +9,7 @@ Import Sieve of Erastothenes prime generator as library
 import random
 from array import array #using array function
 from numpy import mod, gcd
+from library/Sieve_of_Eratosthenes import gen_primes
 
 #Prime one: 7213
 #Prime two 102337
