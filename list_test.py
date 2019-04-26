@@ -5,20 +5,12 @@ from library.Sieve_of_Eratosthenes import gen_primes #use dot (.) instead of sla
 
 prime_array = []
 
-
-'''
-for i in range(10):
-    foo = i+1
-    prime_array.append(foo)
-'''
-
-interval = int(input("Generate primes below: "))
-
+interval = int(input("Generate primes below: ")) #user input to generate primes below this number
 #interval = 1000000 #100k
+
 def prime_limit():
     #counter = 0 #count times ran
-    #interval = 1000000 #100k
-    for i in gen_primes():
+    for i in gen_primes(): #prime function
         if i < interval: #<-- below this number
             #counter +=1
             last_prime = i
@@ -29,7 +21,7 @@ def prime_limit():
             #print("Prime number", counter, "is:", last_prime)
             break
 
-prime_limit()
+prime_limit() #calling prime generate
 #print(prime_array)
 foo = random.choice(prime_array)
 print('Random prime below {} is: '.format(interval) ,foo)
