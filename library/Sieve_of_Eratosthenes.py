@@ -7,7 +7,7 @@
 # https://code.activestate.com/recipes/117119/
 # https://stackoverflow.com/a/568618/
 '''
-import time
+#import time
 def gen_primes():
     """
     Generate an infinite sequence of prime numbers.
@@ -43,11 +43,15 @@ def gen_primes():
 
         check_prime += 1
 
+
+'''
 interval = 1000000 #100k
 
 counter = 0 #count times ran
 time_start=time.time()
+'''
 
+'''
 for i in gen_primes():
     if i < interval: #<-- below this number
         counter +=1
@@ -62,3 +66,4 @@ time_end=time.time()
 rounded_number = round(time_end-time_start, 3)
 print("")
 print("Calculation took", rounded_number, "sec.") # print output
+'''
