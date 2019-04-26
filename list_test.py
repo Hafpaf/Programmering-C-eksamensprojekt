@@ -13,17 +13,20 @@ for i in range(10):
 '''
 
 def prime_limit():
-    #counter = 0 #count times ran
+    counter = 0 #count times ran
     interval = 1000000 #100k
     for i in gen_primes():
-        print(i)
         if i < interval: #<-- below this number
-            #counter +=1
+            counter +=1
             last_prime = i
             prime_array.append(last_prime)
-            print(last_prime)
-    #        print("Prime number", counter, "is:", i) #prit all outputs, comment to optimize
-        break
+            #print("Prime number", counter, "is:", i) #prit all outputs, comment to optimize
+        else:
+            print("The last Prime number below",interval)
+            print("Prime number", counter, "is:", last_prime)
+            break
 
-#foo = random.choice(prime_array)
-print(prime_array)
+prime_limit()
+#print(prime_array)
+foo = random.choice(prime_array)
+print("Random prime: ",foo)
