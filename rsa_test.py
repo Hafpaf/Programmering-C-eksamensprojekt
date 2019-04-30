@@ -9,7 +9,7 @@ Import Sieve of Erastothenes prime generator as library
 import random
 from array import array #using array function
 from numpy import mod, gcd
-from library/Sieve_of_Eratosthenes import gen_primes
+from library.Sieve_of_Eratosthenes import gen_primes #use dot (.) instead of slash (/) for folder structures
 
 #Prime one: 7213
 #Prime two 102337
@@ -48,6 +48,8 @@ while True:
         print("gcd must parse")
         exit(1)
 
+number_e_multiplicative_inverse = pow(number_e,-1) #multiplicative inserve of number_e, number_e**-1
+print("number_e_multiplicative_inverse: ",number_e_multiplicative_inverse)
 #number_d_calc = mod(number_d,) #take modulus of numbers
-number_d = mod((number_e**(-1)),phi_n) #invers nummer_e
-print("number_d:", number_d)
+number_d = mod(number_e_multiplicative_inverse, phi_n) #invers nummer_e
+
