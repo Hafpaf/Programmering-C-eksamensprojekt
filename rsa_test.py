@@ -34,56 +34,60 @@ def prime_limit(interval):
             #print("Prime number", counter, "is:", last_prime)
             break
 
-prime_limit(prime_interval) #calling prime generator
-#print(prime_array)
-foo = random.choice(prime_array)
-print('Random prime below {} is: '.format(prime_interval) ,foo)
+def choose_from_prime_array():
+    random_selection = random.choice(prime_array)
+    print('Random prime below {} is: '.format(prime_interval) ,foo)
+    return random_selection
 
 #Test if prime is the same
-def prime_test():
-    if prime_p == prime_q:
+def prime_test(p, q):
+    if p == q:
         print("Primes must not be equal")
         print("Exiting program...")
         exit(0)
 
-prime_test()
-
 def display_primes():
-    primes = array('f',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
+    primes = array('I',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
     for primeslist in primes:
         print("prime:",primeslist)
 
-def n():
-    n = prime_p * prime_q #calculate n
+def calculate_n(p, q):
+    n = p * q #calculate n
     print("n", n)
+    return n
 
-def phi_n():
-    phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n, called eulers totient function
-    print("phi_n", phi_n)
+def phi(p, q):
+    #phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n, called eulers totient function
+    phi_result = (p - 1) * (q - 1)
+    #return (p - 1) * (q - 1)
+    print("phi_n", phi_result)
+    return phi_result
 
-phi_n()
+
 
 def number_e():
     #self_choosen number below within [1 < number_e < phi_n], must be a prime
-    number_e = 352841
+    e = 352841
     #number_e = random.randint(1,phi_n) # [1 < number_e < phi_n]
-    print("number_e", number_e)
+    print("number_e", e)
+    return e
 
-number_e()
-
-def gcd_calculation():
+def gcd_calculation(phi,e):
     #calculate greater common divisor
-    gcd_calc = gcd(phi_n,number_e) #must return 1
+    gcd_calc = gcd(phi,e) #must return 1
     print("gcd_calc: ", gcd_calc)
 
     while True:
         if gcd_calc == 1: #This is to make sure prime numbers are used since any prime will return 1
             print("gcd_calc: True")
-            break
+            return gcd_calc
         else:
             print("gcd_calc: False")
             print("gcd must parse")
             exit(1)
+
+def number_d(d):
+    return
 
 #def number_e_multiplicative_inverse():
     #number_e_multiplicative_inverse = pow(number_e,-1) #multiplicative inserve of number_e, number_e**-1
@@ -94,6 +98,9 @@ def gcd_calculation():
 
 #print("number_d:", int(number_d()))
 
+prime_limit(prime_interval) #calling prime generator
+prime_test(prime_p, prime_q)
 display_primes()
-n()
-phi_n()
+number_n = calculate_n(prime_p, prime_q)
+phi_n = phi(prime_p, prime_q)
+gcd = gcd_calculation(phi_n,number_e())
