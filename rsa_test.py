@@ -19,6 +19,42 @@ from library.Sieve_of_Eratosthenes import gen_primes #use dot (.) instead of sla
 prime_p = 7213
 prime_q = 102337
 
+prime_array = []
+
+prime_interval = int(input("Generate primes below: ")) #user input to generate primes below this number
+#interval = 1000000 #100k
+
+def prime_limit(interval):
+    #counter = 0 #count times ran
+    for i in gen_primes(): #prime function
+        if i < interval: #<-- below this number
+            #counter +=1
+            last_prime = i
+            prime_array.append(last_prime)
+            #print("Prime number", counter, "is:", i) #prit all outputs, comment to optimize
+        else:
+            #print("The last Prime number below",interval)
+            #print("Prime number", counter, "is:", last_prime)
+            break
+
+prime_limit(prime_interval) #calling prime generator
+#print(prime_array)
+foo = random.choice(prime_array)
+print('Random prime below {} is: '.format(prime_interval) ,foo)
+
+'''def prime_limit():
+    #counter = 0 #count times ran
+    interval = 1000000 #100k
+    for i in gen_primes():
+        if i < interval: #<-- below this number
+            #counter +=1
+            last_prime = i
+            prime_array.append(i)
+    #        print("Prime number", counter, "is:", i) #prit all outputs, comment to optimize
+        break
+foo = random.choice(prime_array)
+print(foo)'''
+
 #Test if prime is the same
 if prime_p == prime_q:
     print("Primes must not be equal")
@@ -53,3 +89,4 @@ print("number_e_multiplicative_inverse: ",number_e_multiplicative_inverse)
 #number_d_calc = mod(number_d,) #take modulus of numbers
 number_d = mod(number_e_multiplicative_inverse, phi_n) #invers nummer_e
 
+#print("number_d:", int(number_d()))
