@@ -2,7 +2,6 @@
 Generate rsa keypair
 
 TODO:
-catch if gcd is not equal 1
 Find solution to d
 '''
 import random
@@ -21,6 +20,7 @@ prime_array = []
 prime_interval = int(input("Generate primes below: ")) #user input to generate primes below this number
 #interval = 1000000 #100k
 
+#Prime generator within interval
 def prime_limit(interval):
     #counter = 0 #count times ran
     for i in gen_primes(): #prime function
@@ -34,17 +34,17 @@ def prime_limit(interval):
             #print("Prime number", counter, "is:", last_prime)
             break
 
-def choose_from_prime_array():
-    random_selection = random.choice(prime_array)
-    print('Random prime below {} is: '.format(prime_interval) ,foo)
-    return random_selection
-
-#Test if prime is the same
-def prime_test(p, q):
-    if p == q:
-        print("Primes must not be equal")
-        print("Exiting program...")
-        exit(0)
+def prime_numbers():
+    while True:
+        p = random.choice(prime_array)
+        q = random.choice(prime_array)
+        print('Random prime_p below {} is: '.format(prime_interval) , p)
+        print('Random prime_q below {} is: '.format(prime_interval) , q)
+        #Test if prime are the same
+        if p != q:
+            print("Primes not equal: Pass")
+            return (p,q)
+        print("Primes must not be equal, generating new primes")
 
 def display_primes():
     primes = array('I',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
@@ -99,7 +99,9 @@ def number_d(d):
 #print("number_d:", int(number_d()))
 
 prime_limit(prime_interval) #calling prime generator
-prime_test(prime_p, prime_q)
+(prime_p,prime_q) = prime_numbers()
+#prime_q = prime_number_q()
+#prime_test(prime_p, prime_q)
 display_primes()
 number_n = calculate_n(prime_p, prime_q)
 phi_n = phi(prime_p, prime_q)
