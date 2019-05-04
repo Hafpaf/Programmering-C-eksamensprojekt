@@ -48,22 +48,17 @@ def prime_numbers():
             print("Primes not equal: Pass")
             return (p,q)
         print("Primes must not be equal, generating new primes")
-'''
-def display_primes():
-    primes = array('I',[prime_p,prime_q]) #big I means unsigned integer. Create array with primes
-    for primeslist in primes:
-        print("prime:",primeslist)
-'''
+
 def calculate_n(p, q):
     n = p * q #calculate n
-    print("n", n)
+    print("n: ", n)
     return n
 
 def phi(p, q):
     #phi_n = (prime_p - 1) * (prime_q - 1) #calculate phi_n, called eulers totient function
     phi_result = (p - 1) * (q - 1)
     #return (p - 1) * (q - 1)
-    print("phi_n", phi_result)
+    print("phi_n: ", phi_result)
     return phi_result
 
 def number_e(): #self_choosen number below within [1 < x < phi_n], must be a prime
@@ -115,7 +110,7 @@ def number_d(d):
 #print("number_d:", int(number_d()))
 
 prime_limit(prime_interval) #calling prime generator
-(prime_p,prime_q) = prime_numbers()
+(prime_p,prime_q) = prime_numbers() #choose random primes
 #prime_q = prime_number_q()
 #prime_test(prime_p, prime_q)
 #display_primes()
