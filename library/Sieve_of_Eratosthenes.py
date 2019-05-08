@@ -42,28 +42,3 @@ def gen_primes():
             del prime_sequence[check_prime]
 
         check_prime += 1
-
-
-'''
-interval = 1000000 #100k
-
-counter = 0 #count times ran
-time_start=time.time()
-'''
-
-'''
-for i in gen_primes():
-    if i < interval: #<-- below this number
-        counter +=1
-#        print("Prime number", counter, "is:", i) #prit all outputs, comment to optimize
-        last_prime=i
-    else:
-        print("The last Prime number below",interval)
-        print("Prime number", counter, "is:", last_prime)
-        break
-
-time_end=time.time()
-rounded_number = round(time_end-time_start, 3)
-print("")
-print("Calculation took", rounded_number, "sec.") # print output
-'''
