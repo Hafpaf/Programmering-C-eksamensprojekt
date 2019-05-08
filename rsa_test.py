@@ -85,5 +85,5 @@ prime_limit(prime_interval) #calling prime generator
 (prime_p,prime_q) = prime_numbers() #choose random primes
 number_n = calculate_n(prime_p, prime_q)
 phi_n = phi(prime_p, prime_q)
-number_e() #minimum, maximum
+#number_e() #minimum, maximum
 gcd = gcd_calculation(phi_n,number_e())
